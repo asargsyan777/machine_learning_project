@@ -6,6 +6,7 @@
 2. [Heroko Account](https://dashbord.heroko.com/login)
 3. [VS Code IDE](https://code.visualstudio.com/download)
 4. [GIT cli](https://git-scm/downloads)
+5. [GIT Documentation](https://git-scm.com/docs/gittutorial)
 
 
 Creating conda envirement
