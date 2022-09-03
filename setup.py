@@ -1,35 +1,38 @@
 from setuptools import setup,find_packages
 from typing import List
 
-#Declerinng variables for setup functios
-PROJECT_NAME="housing predictor"
+#Declaring variables for setup functions
+PROJECT_NAME="housing-predictor"
 VERSION="0.0.3"
 AUTHOR="Anna Sargsyan"
-DESCRIPTION="This is my first Machine Learning project"
+DESRCIPTION="This is my first Machine Learning Project"
 
 REQUIREMENT_FILE_NAME="requirements.txt"
 
-
-def get_requirements_list()->List[str]:
-    #Description:This functio is goinng to return list of requirement
-    # metion in requiremets.txt file
-    #Return this fuction is going to return a list which
-    #  contain name of liberaries metio in req.txt file
+HYPHEN_E_DOT = "-e ."
 
 
-
+def get_requirements_list() -> List[str]:
+    """
+    Description: This function is going to return list of requirement
+    mention in requirements.txt file
+    return This function is going to return a list which contain name
+    of libraries mentioned in requirements.txt file
+    """
     with open(REQUIREMENT_FILE_NAME) as requirement_file:
-        return requirement_file.readlines().remove("-e .")
+        requirement_list = requirement_file.readlines()
+        requirement_list = [requirement_name.replace("\n", "") for requirement_name in requirement_list]
+        if HYPHEN_E_DOT in requirement_list:
+            requirement_list.remove(HYPHEN_E_DOT)
+        return requirement_list
 
 
 
 setup(
-    name=PROJECT_NAME,
-    version=VERSION,
-    author=AUTHOR,
-    description=DESCRIPTION,
-    packages=find_packages(),
-    install_requires=get_requirements_list()
-
+name=PROJECT_NAME,
+version=VERSION,
+author=AUTHOR,
+description=DESRCIPTION,
+packages=find_packages(), 
+install_requires=get_requirements_list()
 )
-
