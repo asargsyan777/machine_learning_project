@@ -100,3 +100,11 @@ python setup.py install
 ```
 
 
+Install ipykernnel
+
+```
+pip install ipykernel
+```
+
+
+
