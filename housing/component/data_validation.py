@@ -5,6 +5,7 @@ from housing.exception import HousingException
 from housing.entity.config_entity import DataValidationConfig
 from housing.entity.artifact_entity import DataIngestionArtifact,DataValidationArtifact
 import os,sys
+
 import pandas  as pd
 from evidently.model_profile import Profile
 from evidently.model_profile.sections import DataDriftProfileSection
@@ -61,6 +62,7 @@ class DataValidation:
         except Exception as e:
             raise HousingException(e,sys) from e
 
+
     
     def validate_dataset_schema(self)->bool:
         try:
@@ -81,6 +83,7 @@ class DataValidation:
             return validation_status 
         except Exception as e:
             raise HousingException(e,sys) from e
+
 
     def get_and_save_data_drift_report(self):
         try:
@@ -145,5 +148,3 @@ class DataValidation:
 
     def __del__(self):
         logging.info(f"{'>>'*30}Data Valdaition log completed.{'<<'*30} \n\n")
-        
-

@@ -11,7 +11,7 @@
 
 Creating conda envirement
 ```
-conda create -p vev python==3.7 -y
+conda create -p venv python==3.7 -y
 ```
 ```
 conda activate venv/
@@ -105,6 +105,11 @@ Install ipykernnel
 ```
 pip install ipykernel
 ```
+
+
+Data Drift:
+
+When your dataset stats gets change we call it as data draft
 
 
 

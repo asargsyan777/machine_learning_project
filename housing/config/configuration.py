@@ -22,6 +22,8 @@ class Configuartion:
         except Exception as e:
             raise HousingException(e,sys) from e
 
+    
+
     def get_data_ingestion_config(self) ->DataIngestionConfig:
         try:
             artifact_dir = self.training_pipeline_config.artifact_dir
