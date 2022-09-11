@@ -5,6 +5,7 @@ pandas
 numpy
 PyYAML
 evidently
+dill
 -e .
 
 
